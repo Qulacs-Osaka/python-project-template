@@ -5,6 +5,12 @@ PYTEST := poetry run pytest
 test:
 	$(PYTEST) -v
 
+tests/%.py: FORCE
+	$(PYTEST) $@
+
+# Idiom found at https://www.gnu.org/software/make/manual/html_node/Force-Targets.html
+FORCE:
+
 .PHONY: lint
 lint:
 	$(PYSEN) run lint
