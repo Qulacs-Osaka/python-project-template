@@ -7,12 +7,56 @@ Installation in Linux and macOS:
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
 ```
 
-And installation in Windows:
+In Windows:
 ```bash
 (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
 ```
 
-For detailed instruction, refer to [poetry documentation](https://python-poetry.org/docs/#installation).
+For detailed instruction, [poetry documentation](https://python-poetry.org/docs/#installation).
+
+## Using poetry
+We introduce basic usage of poetry here.
+
+### Virtual environment
+poetry creates a virtual environment to manage dependencies.
+When you use VSCode, it is useful to create it under the root of the project.
+First, change configuration.
+```bash
+poetry config virtualenvs.in-project true
+```
+And select `./.venv/bin/python` as Python interpreter of the project.
+
+### Dependency management
+poetry manages list of dependencies in `pyproject.toml`.
+To add a new dependency to the file, run
+```bash
+poetry add numpy
+```
+
+If you want to install a package only for development, add `-D` flag.
+```bash
+poetry add -D black
+```
+
+And install dependencies
+```bash
+poetry install
+```
+This command updates `poetry.lock`. All developer can install exact same version of dependencies with this file, so be sure to commit this file to git.
+
+You can update dependencies to latest versions with this command.
+```bash
+poetry update
+```
+
+### Run scripts and commands
+You can run scripts and commands in the virtual environment.
+```bash
+poetry run python main.py
+poetry run python
+```
+
+In other words, you cannot access packages you installed in the virtual environment if you just run `python main.py`.
 
 ## Start coding
 1. Clone this repository.
@@ -34,9 +78,16 @@ poetry install
 
 5. Format, lint, and test your code.
 ```
-make test
 make check
+make test
 ```
+
+If you have format or lint error, fix with this command.
+```
+make format
+```
+
+There might remain some errors. They cannot be fixed automatically, so fix them manually.
 
 6. After modification, commit and push changes.
 ```bash
@@ -48,7 +99,7 @@ git push -u origin 99-wonderful-model
 git push
 ```
 
-7. Create a pull request(PR) after you finish the development at the branch. Basically you need someone to review your code. If modification is subtle, you might not need a review. After reviewer approved and All CI passed.
+7. Create a pull request(PR) after you finish the development at the branch. Basically you need someone to review your code. After reviewer approved and All CI passed, merge the branch to `main`.
 
 ## Testing
 Write tests when you develop a new feature. Tests are executed automatically.
@@ -69,7 +120,7 @@ If the assertion fails, error contents are displayed with red. If you do not see
 
 You might want to run tests only in specific files.
 In that case, run `make` with file(s) you want to test.
-```
+```bash
 make tests/test_sample.py
 ```
 
