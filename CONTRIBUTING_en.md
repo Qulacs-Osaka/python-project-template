@@ -12,10 +12,11 @@ In Windows:
 (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
 ```
 
-For detailed instruction, [poetry documentation](https://python-poetry.org/docs/#installation).
+Detailed instruction: [poetry documentation](https://python-poetry.org/docs/#installation)
 
 ## Using poetry
 We introduce basic usage of poetry here.
+For further information, refer to [Basic usage](https://python-poetry.org/docs/basic-usage) and [Commands](https://python-poetry.org/docs/cli/).
 
 ### Virtual environment
 poetry creates a virtual environment to manage dependencies.
@@ -24,7 +25,7 @@ First, change configuration.
 ```bash
 poetry config virtualenvs.in-project true
 ```
-And select `./.venv/bin/python` as Python interpreter of the project.
+And in VSCode setting, select `./.venv/bin/python` as Python interpreter of the project.
 
 ### Dependency management
 poetry manages list of dependencies in `pyproject.toml`.
@@ -42,9 +43,9 @@ And install dependencies
 ```bash
 poetry install
 ```
-This command updates `poetry.lock`. All developer can install exact same version of dependencies with this file, so be sure to commit this file to git.
+This command updates `poetry.lock`. Any developer can install exact same version of dependencies with this file, so be sure to commit this file.
 
-You can update dependencies to latest versions with this command.
+You can update dependencies to latest versions with following command.
 ```bash
 poetry update
 ```
@@ -56,7 +57,15 @@ poetry run python main.py
 poetry run python
 ```
 
-In other words, you cannot access packages you installed in the virtual environment if you just run `python main.py`.
+In other words, you cannot use packages you installed in the virtual environment if you just run `python main.py`.
+
+### Build and publish
+To build the project to wheel archive, just run:
+```bash
+poetry build
+```
+
+For publish the package, refer to [How to Publish a Python Package to PyPI using Poetry](https://towardsdatascience.com/how-to-publish-a-python-package-to-pypi-using-poetry-aa804533fc6f).
 
 ## Start coding
 1. Clone this repository.
@@ -89,7 +98,7 @@ make format
 
 There might remain some errors. They cannot be fixed automatically, so fix them manually.
 
-6. After modification, commit and push changes.
+6. After coding, commit and push changes.
 ```bash
 git add -p
 git commit
@@ -99,7 +108,7 @@ git push -u origin 99-wonderful-model
 git push
 ```
 
-7. Create a pull request(PR) after you finish the development at the branch. Basically you need someone to review your code. After reviewer approved and All CI passed, merge the branch to `main`.
+7. Create a pull request(PR) after you finish the development at the branch. Basically you need someone to review your code. After reviewer approved and all CI passed, merge the branch to `main`.
 
 ## Testing
 Write tests when you develop a new feature. Tests are executed automatically.
