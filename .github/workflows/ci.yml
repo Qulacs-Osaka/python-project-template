@@ -39,3 +39,6 @@ jobs:
 
       - name: Check format & lint
         run: make lint
+
+      - name: Run test
+        run: make test

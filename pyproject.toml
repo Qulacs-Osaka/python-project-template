@@ -10,6 +10,7 @@ python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 pysen = {version = "^0.9.1", extras = ["lint"]}
+pytest = "^6.2.5"
 
 [tool.pysen]
 version = "0.9"
