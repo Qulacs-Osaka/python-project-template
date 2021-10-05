@@ -26,7 +26,7 @@ VSCode を使う場合はプロジェクトのルートに作成すると便利�
 ```bash
 poetry config virtualenvs.in-project true
 ```
-そして VSCode の設定で `./.venv/bin/python` をプロジェクトの Python インタプリタとして指定します．
+そして VSCode の設定で `./.venv/bin/python`(Windows では `./.venv/Scripts/python.exe`) をプロジェクトの Python インタプリタとして指定します．
 
 ### Dependency management
 poetry は依存関係のリストを `pyproject.toml` で管理します．

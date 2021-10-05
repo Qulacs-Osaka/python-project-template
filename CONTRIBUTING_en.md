@@ -25,7 +25,7 @@ First, change configuration.
 ```bash
 poetry config virtualenvs.in-project true
 ```
-And in VSCode setting, select `./.venv/bin/python` as Python interpreter of the project.
+And in VSCode setting, select `./.venv/bin/python`(`./.venv/Scripts/python.exe` in Windows) as Python interpreter of the project.
 
 ### Dependency management
 poetry manages list of dependencies in `pyproject.toml`.
