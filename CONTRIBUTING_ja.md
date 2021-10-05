@@ -138,6 +138,32 @@ make tests/test_sample.py
 
 テストには `pytest` を使用しています． 詳しい使い方は[ドキュメント](https://docs.pytest.org/en/6.2.x/)を参照してください．
 
+## Handle linter error
+ほとんどのリンタのエラーは修正すべきですが，どうしても修正できないエラーに遭遇するかもしれません．
+そういった場合は，コメントを追加することでエラーを無視することができます．
+
+たとえば，このコードをリンタにかけると，
+```python
+example = lambda: "example"
+```
+
+このようなエラーが出力されるはずです．
+```
+E731 do not assign a lambda expression, use a def
+```
+
+`E731` はエラーコードで，続く一文はエラーの内容です．
+ここで `# noqa E731` を行の最後に追加することでこのエラーを無視することができます．
+```python
+example = lambda: "example"  # noqa E731
+```
+
+`E731` の代わりに任意のエラーコードを使用できます．
+詳しくは [flake8 document](https://flake8.pycqa.org/en/3.1.1/user/ignoring-errors.html#in-line-ignoring-errors) を参照してください．
+
+この方法はある種のワークアラウンドです．
+この方法をとるかどうかを PR のレビューで議論するようにしてください．
+
 ## CI
 GitHub Actions で CI を実行します． 基本的に CI に通らないとマージできません．
 CI ではテストとコードフォーマット，リンタのエラーがないことの確認をします．

@@ -135,6 +135,32 @@ make tests/test_sample.py
 
 We use `pytest` for testing. Detailed instructions are available in the [document](https://docs.pytest.org/en/6.2.x/).
 
+## Handle linter error
+Most linter errors must be fixed, but you may encounter some linter errors which you cannot fix.
+In this case, you can ignore the error by adding some comments.
+
+For example, if you check this code with linter,
+```python
+example = lambda: "example"
+```
+
+you will got an error something like this:
+```
+E731 do not assign a lambda expression, use a def
+```
+
+`E731` is error code and following text is the contents of the error.
+You can ignore this error by adding `# noqa E731` at the end of line.
+```python
+example = lambda: "example"  # noqa E731
+```
+
+Any linter error code is acceptable instead of `E731`.
+You can find more information at [flake8 document](https://flake8.pycqa.org/en/3.1.1/user/ignoring-errors.html#in-line-ignoring-errors).
+
+This method is a kind of workaround.
+You should discuss on a PR review whether this approach is adopted.
+
 ## CI
 Run CI at GitHub Actions. You cannot merge a branch unless CI passes.
 In CI, we run tests and check code format and linter error.
