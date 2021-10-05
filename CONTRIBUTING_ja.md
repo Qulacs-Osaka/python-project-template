@@ -54,7 +54,6 @@ poetry update
 
 ### Run scripts and commands
 仮想環境内でスクリプトやコマンドを実行できます．
-You can run scripts and commands in the virtual environment.
 ```bash
 poetry run python main.py
 poetry run python
@@ -88,7 +87,12 @@ git switch -c 99-wonderful-model
 poetry install
 ```
 
-5. コードをフォーマットし，リンタを実行し，テストをします．
+5. コードを書きます．新しいファイルを作った際は，後の手順のためにそのファイルを git のインデックスに追加してください．
+```bash
+git add NEW_FILE
+```
+
+6. コードをフォーマットし，リンタを実行し，テストをします．
 ```
 make check
 make test
@@ -101,7 +105,7 @@ make format
 
 まだエラーが残っているかもしれません．それらのエラーは自動的に修正できないため，手で修正します．
 
-6. コーディングが終わったら，変更をコミットしてプッシュします
+7. コーディングが終わったら，変更をコミットしてプッシュします
 ```bash
 git add -p
 git commit
@@ -111,7 +115,7 @@ git push -u origin 99-wonderful-model
 git push
 ```
 
-7. そのブランチで開発すべき機能ができたらプルリクエスト(PR)を出します． 基本的に他の人にレビューを受けるようにします．レビュアーが承認してすべての CI がパスしたら `main` にマージします．
+8. そのブランチで開発すべき機能ができたらプルリクエスト(PR)を出します． 基本的に他の人にレビューを受けるようにします．レビュアーが承認してすべての CI がパスしたら `main` にマージします．
 
 ## Testing
 新しい機能を開発したときにはテストを書くようにします． このテストは基本的に自動で実行されるものです．

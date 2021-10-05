@@ -1,4 +1,4 @@
-# python-project-template
+# project_name
 
 This is a template repository for Python project.
 
@@ -8,4 +8,4 @@ Refer to a following documentation:
 - ja: https://docs.github.com/ja/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
 
 Then update `tool.poetry` section in `pyproject.toml` along your new project.
-And rename `project_template` repository. It is usually the same as `name` in `tool.poetry`.
+And rename `project_name` directory. It is the same as `name` in `tool.poetry`.

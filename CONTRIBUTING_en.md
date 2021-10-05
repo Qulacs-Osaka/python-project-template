@@ -85,7 +85,12 @@ git switch -c 99-wonderful-model
 poetry install
 ```
 
-5. Format, lint, and test your code.
+5. Then write your code. If you create a new file, add it to git index for following steps.
+```bash
+git add NEW_FILE
+```
+
+6. Format, lint, and test your code.
 ```
 make check
 make test
@@ -98,7 +103,7 @@ make format
 
 There might remain some errors. They cannot be fixed automatically, so fix them manually.
 
-6. After coding, commit and push changes.
+7. After coding, commit and push changes.
 ```bash
 git add -p
 git commit
@@ -108,7 +113,7 @@ git push -u origin 99-wonderful-model
 git push
 ```
 
-7. Create a pull request(PR) after you finish the development at the branch. Basically you need someone to review your code. After reviewer approved and all CI passed, merge the branch to `main`.
+8. Create a pull request(PR) after you finish the development at the branch. Basically you need someone to review your code. After reviewer approved and all CI passed, merge the branch to `main`.
 
 ## Testing
 Write tests when you develop a new feature. Tests are executed automatically.
