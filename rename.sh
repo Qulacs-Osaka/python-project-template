@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 # $1: Project name which is renamed to.
 function validate_project_name() {
