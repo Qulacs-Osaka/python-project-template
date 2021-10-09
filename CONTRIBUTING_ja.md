@@ -17,10 +17,10 @@ Windows では
 
 ## Using poetry
 poetry の基本的な使用方法を紹介します．
-詳しくは [Basic usage](https://python-poetry.org/docs/basic-usage) and [Commands](https://python-poetry.org/docs/cli/) を参照してください．
+詳しくは [Basic usage](https://python-poetry.org/docs/basic-usage) と [Commands](https://python-poetry.org/docs/cli/) を参照してください．
 
 ### Virtual environment
-poetry は依存関係を管理するために仮想環境を作成します．
+poetry は依存パッケージを管理するために仮想環境を作成します．
 VSCode を使う場合はプロジェクトのルートに作成すると便利です．
 まず設定を変更します．
 ```bash
@@ -29,8 +29,8 @@ poetry config virtualenvs.in-project true
 そして VSCode の設定で `./.venv/bin/python`(Windows では `./.venv/Scripts/python.exe`) をプロジェクトの Python インタプリタとして指定します．
 
 ### Dependency management
-poetry は依存関係のリストを `pyproject.toml` で管理します．
-このファイルに新しい依存関係を追加するには
+poetry は依存パッケージのリストを `pyproject.toml` で管理します．
+このファイルに新しい依存パッケージを追加するには
 ```bash
 poetry add numpy
 ```
@@ -40,14 +40,14 @@ poetry add numpy
 poetry add -D black
 ```
 
-そして依存関係をインストールします．
+そして依存パッケージをインストールします．
 ```bash
 poetry install
 ```
 このコマンドは `poetry.lock` を更新します．
-このファイルによってどの開発者もまったく同じバージョンの依存関係をインストールできるため，このファイルをコミットするようにしてください．
+このファイルによってどの開発者もまったく同じバージョンの依存をインストールできるため，このファイルをコミットするようにしてください．
 
-以下のコマンドで依存関係を最新のバージョンに更新できます．
+以下のコマンドで依存パッケージを最新のバージョンに更新できます．
 ```bash
 poetry update
 ```
@@ -77,12 +77,12 @@ git switch main
 git pull
 ```
 
-3. 開発しようとしている機能を説明する名前をつけたブランチを作成します．ブランチの名前のフォーマットは `${ISSUE_NUMBER}/${FEATURE}` です．
+3. 開発しようとしている機能を説明する名前をつけたブランチを作成します．ブランチの名前のフォーマットは `${ISSUE_NUMBER}-${FEATURE}` です．
 ```bash
 git switch -c 99-wonderful-model
 ```
 
-4. 依存関係をインストールします．直近にインストールした依存関係がなければこれは必要ありません．
+4. 依存パッケージをインストールします．直近にインストールした依存パッケージがなければこれは必要ありません．
 ```bash
 poetry install
 ```
@@ -98,14 +98,14 @@ make check
 make test
 ```
 
-フォーマットあるいはリンタのエラーがあった場合はこのコマンドで修正できます．
+フォーマットあるいはリンタのエラーがあった場合はこのコマンドで自動修正を試みることができます．
 ```
 make format
 ```
 
 まだエラーが残っているかもしれません．それらのエラーは自動的に修正できないため，手で修正します．
 
-7. コーディングが終わったら，変更をコミットしてプッシュします
+7. コーディングが終わったら，変更をコミットしてプッシュします．
 ```bash
 git add -p
 git commit
@@ -169,9 +169,9 @@ example = lambda: "example"  # noqa E731
 この方法をとるかどうかを PR のレビューで議論するようにしてください．
 
 ## CI
-GitHub Actions で CI を実行します． 基本的に CI に通らないとマージできません．
+GitHub Actions で CI を実行します． 基本的に CI に通っていないブランチをマージしてはいけません．
 CI ではテストとコードフォーマット，リンタのエラーがないことの確認をします．
 CI の目的には次のようなものがあります．
-* コードが正常に確認していることを全体で共有する
+* コードが正常に動作していることを全体で共有する
 * 手元では気づかなかったエラーを発見する
-* コードがフォーマットされておりリンタのエラーがないことを強制することで，余計な diff が生まれないようにする
+* コードがフォーマットされておりリンタのエラーがない状態であることを強制することで，余計な diff が生まれないようにする

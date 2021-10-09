@@ -75,7 +75,7 @@ git switch main
 git pull
 ```
 
-3. Create branch with name describing a feature you are going to develop. Branch name format is `${ISSUE_NUMBER}/${FEATURE}`
+3. Create branch with name describing a feature you are going to develop. Branch name format is `${ISSUE_NUMBER}-${FEATURE}`
 ```bash
 git switch -c 99-wonderful-model
 ```
