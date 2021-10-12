@@ -96,7 +96,7 @@ make check
 make test
 ```
 
-If you have format or lint error, fix with this command.
+If you have format or lint error, you can use this command to try fixing it automatically.
 ```
 make format
 ```
@@ -167,7 +167,7 @@ This method is a kind of workaround.
 You should discuss on a PR review whether this approach is adopted.
 
 ## CI
-Run CI at GitHub Actions. You cannot merge a branch unless CI passes.
+Run CI at GitHub Actions. You should not merge a branch unless CI passes.
 In CI, we run tests and check code format and linter error.
 The purpose of CI is
 * Share our code works properly in the team.
