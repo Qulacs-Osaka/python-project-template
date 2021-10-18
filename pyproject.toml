@@ -11,6 +11,8 @@ python = "^3.8"
 [tool.poetry.dev-dependencies]
 pysen = {version = "^0.9.1", extras = ["lint"]}
 pytest = "^6.2.5"
+Sphinx = "^4.2.0"
+sphinx-book-theme = "^0.1.6"
 
 [tool.pysen]
 version = "0.9"
