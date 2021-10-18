@@ -11,6 +11,7 @@ Welcome to project_name's documentation!
    :caption: Contents:
 
    modules
+   notebooks/0_example
 
 
 
