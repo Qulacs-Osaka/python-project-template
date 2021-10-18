@@ -30,4 +30,4 @@ api:
 
 .PHONY: doc
 html: api
-	$(MAKE) -C doc html
+	poetry run $(MAKE) -C doc html
