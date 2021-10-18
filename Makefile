@@ -27,5 +27,5 @@ api:
 	sphinx-apidoc -f -e -o doc/source project_name
 
 .PHONY: doc
-doc: api
+html: api
 	$(MAKE) -C doc html
