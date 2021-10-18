@@ -173,3 +173,46 @@ The purpose of CI is
 * Share our code works properly in the team.
 * Find error you cannot notice at your local machine.
 * Avoid unnecessary diff by forcing code format and linter error.
+
+## Documentation
+You can publish the repository's documentation at [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).
+It includes Jupyter Notebook style tutorial and API documentation generated from comments in the source code.
+
+### API Documentation
+A documentation comment is put just after a definition of function or class.
+This is an example:
+```python
+def wonderful_func(x: Int, y: str) -> str:
+    """Summary line(one line is preferred).
+
+    Detailed description.
+    You can use multiple lines.
+
+    Args:
+        x: Description of argument x.
+        y: Description of argument y.
+
+    Examples:
+    >>> a = add(2, 3)
+
+    Returns:
+        Description of return value.
+    """
+    return x + y
+```
+
+For more detail, refer to https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html.
+You can find other section headers(`Args` and `Examples` in the example) here.
+
+### Build
+To build the documentation as HTML files, just run following:
+```
+make html
+```
+
+Then HTML files are generated at `doc/build/html`.
+You can open any of them in your browser.
+
+### Publish
+When PR is merged into `main` branch, the documentation is automatically generated and published to GitHub Pages.
+Generated HTML files are pushed to `gh-pages` branch, so do not edit and delete the branch.
