@@ -1,4 +1,4 @@
-name: Build and Deploy Documentation
+name: "Build and Deploy Documentation"
 
 on:
   push:
@@ -12,6 +12,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # nbsphinx needs pandoc, but the version of pandoc which is available at apt is old.
+    # So use pandoc container instead.
+    container: pandoc/core:2.14.2
 
     steps:
       - uses: actions/checkout@v2
@@ -41,7 +44,6 @@ jobs:
 
       # nbsphinx needs pandoc.
       - name: Build documentation
-        uses: docker://pandoc/core:2.14.2
         run: |
           make html
 
