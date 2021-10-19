@@ -178,6 +178,22 @@ The purpose of CI is
 You can publish the repository's documentation at [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).
 It includes Jupyter Notebook style tutorial and API documentation generated from comments in the source code.
 
+### Tutorial by Jupyter Notebook
+You can create tutorial pages from Jupyter Notebook.
+
+First, create file like `1.1_wonderful_tutorial.ipynb` in `doc/source/notebooks` and add contents. 
+Second, add a line `notebooks/1.1_wonderful_tutorial`(file name without its extension) to `doc/source/index.rst` like this:
+```
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+   notebooks/1.1_wonderful_tutorial
+```
+
+Detailed instructions of Markdown and code cells are available: [Markdown Cells](https://nbsphinx.readthedocs.io/en/0.8.7/markdown-cells.html), [Code Cells](https://nbsphinx.readthedocs.io/en/0.8.7/code-cells.html)
+
 ### API Documentation
 A documentation comment is put just after a definition of function or class.
 This is an example:
