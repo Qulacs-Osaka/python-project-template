@@ -12,9 +12,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    # nbsphinx needs pandoc, but the version of pandoc which is available at apt is old.
-    # So use pandoc container instead.
-    container: pandoc/ubuntu:2.14.2
 
     steps:
       - uses: actions/checkout@v2
@@ -41,6 +38,10 @@ jobs:
       - name: Install dependencies
         if: steps.cached-poetry-deps.outputs.cache-hit != 'true'
         run: poetry install --no-interaction --no-root
+
+      # nbsphinx needs pandoc.
+      - name: Install pandoc
+        run: sudo apt install -y pandoc
 
       # nbsphinx needs pandoc.
       - name: Build documentation
