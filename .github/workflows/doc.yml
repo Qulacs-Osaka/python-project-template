@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     # nbsphinx needs pandoc, but the version of pandoc which is available at apt is old.
     # So use pandoc container instead.
-    container: pandoc/core:2.14.2
+    container: pandoc/ubuntu:2.14.2
 
     steps:
       - uses: actions/checkout@v2
