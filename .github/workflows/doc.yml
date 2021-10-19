@@ -39,7 +39,9 @@ jobs:
         if: steps.cached-poetry-deps.outputs.cache-hit != 'true'
         run: poetry install --no-interaction --no-root
 
+      # nbsphinx needs pandoc.
       - name: Build documentation
+        uses: docker://pandoc/core:2.14.2
         run: |
           make html
 
