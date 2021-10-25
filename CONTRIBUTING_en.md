@@ -91,13 +91,13 @@ git add NEW_FILE
 ```
 
 6. Format, lint, and test your code.
-```
+```bash
 make check
 make test
 ```
 
 If you have format or lint error, you can use this command to try fixing it automatically.
-```
+```bash
 make format
 ```
 
@@ -175,14 +175,15 @@ The purpose of CI is
 * Avoid unnecessary diff by forcing code format and linter error.
 
 ## Documentation
-You can publish the repository's documentation at [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).
-It includes Jupyter Notebook style tutorial and API documentation generated from comments in the source code.
+You can publish the repository's documentation at [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). It can include Jupyter Notebook style tutorial and API documentation generated from comments in the source code. These are converted into HTML files automatically.
 
 ### Tutorial by Jupyter Notebook
 You can create tutorial pages from Jupyter Notebook.
 
-First, create file like `1.1_wonderful_tutorial.ipynb` in `doc/source/notebooks` and add contents. 
-Second, add a line `notebooks/1.1_wonderful_tutorial`(file name without its extension) to `doc/source/index.rst` like this:
+1. Create file like `1.1_wonderful_tutorial.ipynb` in `doc/source/notebooks`.
+2. Add title(like `# Wonderful Tutorial`) in the first Markdown cell. This is displayed at index page.
+3. Add contents.
+4. Add a line `notebooks/1.1_wonderful_tutorial`(file name without its extension) to `doc/source/index.rst` like this:
 ```
 .. toctree::
    :maxdepth: 2
@@ -192,10 +193,12 @@ Second, add a line `notebooks/1.1_wonderful_tutorial`(file name without its exte
    notebooks/1.1_wonderful_tutorial
 ```
 
+Images used in notebooks should be stored at `doc/source/notebooks/figs`. It is recommended to name the images with the section number: e.g. `1.1_wonderful_graph.png`.
+
 Detailed instructions of Markdown and code cells are available: [Markdown Cells](https://nbsphinx.readthedocs.io/en/0.8.7/markdown-cells.html), [Code Cells](https://nbsphinx.readthedocs.io/en/0.8.7/code-cells.html)
 
 ### API Documentation
-A documentation comment is put just after a definition of function or class.
+Documentation comments are put just after a definition of function or class.
 This is an example:
 ```python
 def wonderful_func(x: Int, y: str) -> str:
@@ -222,13 +225,16 @@ You can find other section headers(`Args` and `Examples` in the example) here.
 
 ### Build
 To build the documentation as HTML files, just run following:
-```
+```bash
 make html
 ```
 
-Then HTML files are generated at `doc/build/html`.
-You can open any of them in your browser.
+Then HTML files are generated at `doc/build/html`. You can open any of them in your browser.
+Or you can build and serve them at localhost by just running this command:
+```bash
+make serve  # Serves at http://localhost:8000
+make serve PORT=12345  # Or you can serve at other port.
+```
 
 ### Publish
-When PR is merged into `main` branch, the documentation is automatically generated and published to GitHub Pages.
-Generated HTML files are pushed to `gh-pages` branch, so do not edit and delete the branch.
+When PR is merged into `main` branch, the documentation is automatically generated and published to GitHub Pages. Generated HTML files are pushed to `gh-pages` branch, so do not edit and delete the branch.
