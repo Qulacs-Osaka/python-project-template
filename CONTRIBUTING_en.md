@@ -7,8 +7,8 @@ Installation in Linux and macOS:
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
 ```
 
-In Windows:
-```bash
+In Windows, use PowerShell:
+```powershell
 (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
 ```
 
