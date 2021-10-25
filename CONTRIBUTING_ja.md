@@ -3,13 +3,13 @@
 poetry をインストールしてください．
 poetry は依存解決，パッケージのビルドと公開のためのツールです．
 
-Linux と macOS におけるインストール方法は
+Linux と macOS では以下のコマンドでインストールしてください．
 ```bash
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
 ```
 
-Windows では
-```bash
+Windows では PowerShell を使ってください．
+```powershell
 (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
 ```
 
