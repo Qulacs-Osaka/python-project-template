@@ -175,3 +175,67 @@ CI の目的には次のようなものがあります．
 * コードが正常に動作していることを全体で共有する
 * 手元では気づかなかったエラーを発見する
 * コードがフォーマットされておりリンタのエラーがない状態であることを強制することで，余計な diff が生まれないようにする
+
+## Documentation
+リポジトリのドキュメントを [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) で公開することができます．Jupyter Notebook 形式のチュートリアルやソースコード中のコメントから生成した API ドキュメントを含めることができます．これらは自動で HTML ファイルに変換されます．
+
+### Tutorial by Jupyter Notebook
+Jupyter Notebook からチュートリアルページを作成できます．
+
+1. `1.1_wonderful_tutorial.ipynb` のようなファイルを `doc/source/notebooks`　に作成します．
+2. `# Wonderful Tutorial` のようなタイトルを最初のマークダウンセルに書きます．これがドキュメントの目次に表示されます．
+3. 中身を書きます．
+4. `notebooks/1.1_wonderful_tutorial`(ファイル名から拡張子を取り除いたもの)を `doc/source/index.rst` に追記します:
+```
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+   notebooks/1.1_wonderful_tutorial
+```
+
+ノートブックで使う画像は `doc/source/notebooks/figs` に入れるようにしてください．画像の名前には `1.1_wonderful_graph.png` のようにセクション番号をつけることをおすすめします．
+
+マークダウンセルとコードセルに関する詳しいドキュメント: [Markdown Cells](https://nbsphinx.readthedocs.io/en/0.8.7/markdown-cells.html), [Code Cells](https://nbsphinx.readthedocs.io/en/0.8.7/code-cells.html)
+
+### API Documentation
+ドキュメントコメント(docstring)は関数やクラスの定義の直後に書きます．
+以下に例を示します:
+```python
+def wonderful_func(x: Int, y: str) -> str:
+    """Summary line(one line is preferred).
+
+    Detailed description.
+    You can use multiple lines.
+
+    Args:
+        x: Description of argument x.
+        y: Description of argument y.
+
+    Examples:
+    >>> a = add(2, 3)
+
+    Returns:
+        Description of return value.
+    """
+    return x + y
+```
+
+詳しくは https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html を参照してください．
+
+### Build
+ドキュメントを HTML ファイルとしてビルドするには以下を実行します．
+```bash
+make html
+```
+
+HTML ファイルが `doc/build/html` に生成されるので，ブラウザで開くことができます．
+またはこのコマンドでビルドと localhost でのサーブを同時に行えます．
+```bash
+make serve  # Serves at http://localhost:8000
+make serve PORT=12345  # Or you can serve at other port.
+```
+
+### Publish
+PR が `main` にマージされると，ドキュメントが自動でビルドされて GitHub Pages で公開されます．生成された HTML ファイルは `gh-pages` ブランチにプッシュされますが，このブランチを直接編集したり削除したりしないでください．

@@ -175,13 +175,13 @@ The purpose of CI is
 * Avoid unnecessary diff by forcing code format and linter error.
 
 ## Documentation
-You can publish the repository's documentation at [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). It can include Jupyter Notebook style tutorial and API documentation generated from comments in the source code. These are converted into HTML files automatically.
+You can publish the repository's documentation at [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). It can include Jupyter Notebook format tutorial and API documentation generated from comments in the source code. These are converted into HTML files automatically.
 
 ### Tutorial by Jupyter Notebook
 You can create tutorial pages from Jupyter Notebook.
 
 1. Create file like `1.1_wonderful_tutorial.ipynb` in `doc/source/notebooks`.
-2. Add title(like `# Wonderful Tutorial`) in the first Markdown cell. This is displayed at index page.
+2. Add title like `# Wonderful Tutorial` in the first Markdown cell. This is displayed at index page of the document.
 3. Add contents.
 4. Add a line `notebooks/1.1_wonderful_tutorial`(file name without its extension) to `doc/source/index.rst` like this:
 ```
@@ -198,8 +198,7 @@ Images used in notebooks should be stored at `doc/source/notebooks/figs`. It is 
 Detailed instructions of Markdown and code cells are available: [Markdown Cells](https://nbsphinx.readthedocs.io/en/0.8.7/markdown-cells.html), [Code Cells](https://nbsphinx.readthedocs.io/en/0.8.7/code-cells.html)
 
 ### API Documentation
-Documentation comments are put just after a definition of function or class.
-This is an example:
+Documentation comments(docstring) are put just after a definition of function or class. This is an example:
 ```python
 def wonderful_func(x: Int, y: str) -> str:
     """Summary line(one line is preferred).
@@ -221,7 +220,6 @@ def wonderful_func(x: Int, y: str) -> str:
 ```
 
 For more detail, refer to https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html.
-You can find other section headers(`Args` and `Examples` in the example) here.
 
 ### Build
 To build the documentation as HTML files, just run following:
