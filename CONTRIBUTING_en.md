@@ -219,7 +219,7 @@ def wonderful_func(x: Int, y: str) -> str:
     return x + y
 ```
 
-For more detail, refer to https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html.
+For more detail, refer to [Sphinx document](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
 
 ### Build
 To build the documentation as HTML files, just run following:

@@ -221,7 +221,7 @@ def wonderful_func(x: Int, y: str) -> str:
     return x + y
 ```
 
-詳しくは https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html を参照してください．
+詳しくは [sphinx document](https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html) を参照してください．
 
 ### Build
 ドキュメントを HTML ファイルとしてビルドするには以下を実行します．
