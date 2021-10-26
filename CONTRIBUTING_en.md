@@ -175,13 +175,13 @@ The purpose of CI is
 * Avoid unnecessary diff by forcing code format and linter error.
 
 ## Documentation
-You can publish the repository's documentation at [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). It can include Jupyter Notebook format tutorial and API documentation generated from comments in the source code. These are converted into HTML files automatically.
+You can publish the repository's documentation at [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). It can include Jupyter Notebook format tutorial and API documentation generated from comments in the source code. HTML files for the Web site is generated automatically from these contents.
 
 ### Tutorial by Jupyter Notebook
 You can create tutorial pages from Jupyter Notebook.
 
-1. Create file like `1.1_wonderful_tutorial.ipynb` in `doc/source/notebooks`.
-2. Add title like `# Wonderful Tutorial` in the first Markdown cell. This is displayed at index page of the document.
+1. Create file like `1.1_wonderful_tutorial.ipynb` in `doc/source/notebooks`. 1 file corresponds to 1 page in the Web site.
+2. Add title like `# Wonderful Tutorial` in the first Markdown cell. This is displayed at index page of the document as a title.
 3. Add contents.
 4. Add a line `notebooks/1.1_wonderful_tutorial`(file name without its extension) to `doc/source/index.rst` like this:
 ```
@@ -198,7 +198,7 @@ Images used in notebooks should be stored at `doc/source/notebooks/figs`. It is 
 Detailed instructions of Markdown and code cells are available: [Markdown Cells](https://nbsphinx.readthedocs.io/en/0.8.7/markdown-cells.html), [Code Cells](https://nbsphinx.readthedocs.io/en/0.8.7/code-cells.html)
 
 ### API Documentation
-Documentation comments(docstring) are put just after a definition of function or class. This is an example:
+API documentation is generated from documentation comments(docstring) which are put just after a definition of function or class. This is an example:
 ```python
 def wonderful_func(x: Int, y: str) -> str:
     """Summary line(one line is preferred).
@@ -227,7 +227,7 @@ To build the documentation as HTML files, just run following:
 make html
 ```
 
-Then HTML files are generated at `doc/build/html`. You can open any of them in your browser.
+Then HTML files are generated under `doc/build/html`. You can open them in your browser.
 Or you can build and serve them at localhost by just running this command:
 ```bash
 make serve  # Serves at http://localhost:8000

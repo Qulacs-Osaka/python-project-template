@@ -177,13 +177,13 @@ CI の目的には次のようなものがあります．
 * コードがフォーマットされておりリンタのエラーがない状態であることを強制することで，余計な diff が生まれないようにする
 
 ## Documentation
-リポジトリのドキュメントを [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) で公開することができます．Jupyter Notebook 形式のチュートリアルやソースコード中のコメントから生成した API ドキュメントを含めることができます．これらは自動で HTML ファイルに変換されます．
+リポジトリのドキュメントを [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) で公開することができます．Jupyter Notebook 形式のチュートリアルやソースコード中のコメントから生成した API ドキュメントを含めることができます．Web サイトに必要な HTML ファイルはこれらから自動生成されます．
 
 ### Tutorial by Jupyter Notebook
-Jupyter Notebook からチュートリアルページを作成できます．
+Jupyter Notebook からチュートリアルのページを作成できます．
 
-1. `1.1_wonderful_tutorial.ipynb` のようなファイルを `doc/source/notebooks`　に作成します．
-2. `# Wonderful Tutorial` のようなタイトルを最初のマークダウンセルに書きます．これがドキュメントの目次に表示されます．
+1. `1.1_wonderful_tutorial.ipynb` のようなファイルを `doc/source/notebooks`　に作成します．1ファイルが Web サイトの1ページに対応します．
+2. `# Wonderful Tutorial` のようなタイトルを最初のマークダウンセルに書きます．これがドキュメントの目次にタイトルとして表示されます．
 3. 中身を書きます．
 4. `notebooks/1.1_wonderful_tutorial`(ファイル名から拡張子を取り除いたもの)を `doc/source/index.rst` に追記します:
 ```
@@ -200,8 +200,7 @@ Jupyter Notebook からチュートリアルページを作成できます．
 マークダウンセルとコードセルに関する詳しいドキュメント: [Markdown Cells](https://nbsphinx.readthedocs.io/en/0.8.7/markdown-cells.html), [Code Cells](https://nbsphinx.readthedocs.io/en/0.8.7/code-cells.html)
 
 ### API Documentation
-ドキュメントコメント(docstring)は関数やクラスの定義の直後に書きます．
-以下に例を示します:
+ドキュメントコメント(docstring)は関数やクラスの定義の直後に書くと API ドキュメントが自動生成されます．以下に例を示します:
 ```python
 def wonderful_func(x: Int, y: str) -> str:
     """Summary line(one line is preferred).
@@ -230,7 +229,7 @@ def wonderful_func(x: Int, y: str) -> str:
 make html
 ```
 
-HTML ファイルが `doc/build/html` に生成されるので，ブラウザで開くことができます．
+HTML ファイルが `doc/build/html` 以下に生成されるので，ブラウザで開くことができます．
 またはこのコマンドでビルドと localhost でのサーブを同時に行えます．
 ```bash
 make serve  # Serves at http://localhost:8000
