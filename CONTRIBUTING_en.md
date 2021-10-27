@@ -25,7 +25,6 @@ First, change configuration.
 ```bash
 poetry config virtualenvs.in-project true
 ```
-And in VSCode setting, select `./.venv/bin/python`(`./.venv/Scripts/python.exe` in Windows) as Python interpreter of the project.
 
 ### Dependency management
 poetry manages list of dependencies in `pyproject.toml`.
@@ -56,6 +55,8 @@ You can run scripts and commands in the virtual environment.
 poetry run python main.py
 poetry run python
 ```
+
+When you run in VSCode, select `./.venv/bin/python`(`./.venv/Scripts/python.exe` in Windows) as Python interpreter of the project.
 
 In other words, you cannot use packages you installed in the virtual environment if you just run `python main.py`.
 
