@@ -26,7 +26,6 @@ VSCode を使う場合はプロジェクトのルートに作成すると便利�
 ```bash
 poetry config virtualenvs.in-project true
 ```
-そして VSCode の設定で `./.venv/bin/python`(Windows では `./.venv/Scripts/python.exe`) をプロジェクトの Python インタプリタとして指定します．
 
 ### Dependency management
 poetry は依存パッケージのリストを `pyproject.toml` で管理します．
@@ -60,6 +59,10 @@ poetry run python
 ```
 
 言い換えると，`python main.py` と実行しただけでは仮想環境にインストールしたパッケージを利用することはできません．
+
+VSCode上で実行する場合は`./.venv/bin/python`(Windows では `./.venv/Scripts/python.exe`) をプロジェクトの Python インタプリタとして指定します．
+指定方法については[Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment)を参照してください．
+
 
 ### Build and publish
 wheel アーカイブをビルドするには以下を実行します．
