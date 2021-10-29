@@ -59,7 +59,7 @@ poetry run python
 In other words, you cannot use packages you installed in the virtual environment if you just run `python main.py`.
 
 When you run in VSCode, select `./.venv/bin/python`(`./.venv/Scripts/python.exe` in Windows) as Python interpreter of the project.
-You can refer to the [Official document](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment) to see how to configure it.
+You can refer to [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment) to see how to configure it.
 
 ### Build and publish
 To build the project to wheel archive, just run:
