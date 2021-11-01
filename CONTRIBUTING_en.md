@@ -7,8 +7,8 @@ Installation in Linux and macOS:
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
 ```
 
-In Windows:
-```bash
+In Windows, use PowerShell:
+```powershell
 (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
 ```
 
@@ -25,7 +25,6 @@ First, change configuration.
 ```bash
 poetry config virtualenvs.in-project true
 ```
-And in VSCode setting, select `./.venv/bin/python`(`./.venv/Scripts/python.exe` in Windows) as Python interpreter of the project.
 
 ### Dependency management
 poetry manages list of dependencies in `pyproject.toml`.
@@ -58,6 +57,9 @@ poetry run python
 ```
 
 In other words, you cannot use packages you installed in the virtual environment if you just run `python main.py`.
+
+When you run in VSCode, select `./.venv/bin/python`(`./.venv/Scripts/python.exe` in Windows) as Python interpreter of the project.
+You can refer to [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment) to see how to configure it.
 
 ### Build and publish
 To build the project to wheel archive, just run:
