@@ -185,19 +185,16 @@ Jupyter Notebook からチュートリアルのページを作成できます．
 1. `1.1_wonderful_tutorial.ipynb` のようなファイルを `doc/source/notebooks`　に作成します．1ファイルが Web サイトの1ページに対応します．
 2. `# Wonderful Tutorial` のようなタイトルを最初のマークダウンセルに書きます．これがドキュメントの目次にタイトルとして表示されます．
 3. 中身を書きます．
-4. `notebooks/1.1_wonderful_tutorial`(ファイル名から拡張子を取り除いたもの)を `doc/source/index.rst` に追記します:
+4. `1.1_wonderful_tutorial`(ファイル名から拡張子を取り除いたもの)を `doc/source/notebooks/index.rst` に追記します:
 ```
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-   modules
-   notebooks/1.1_wonderful_tutorial
+   1.1_wonderful_tutorial
 ```
 
 ノートブックで使う画像は `doc/source/notebooks/figs` に入れるようにしてください．画像の名前には `1.1_wonderful_graph.png` のようにセクション番号をつけることをおすすめします．
 
-マークダウンセルとコードセルに関する詳しいドキュメント: [Markdown Cells](https://nbsphinx.readthedocs.io/en/0.8.7/markdown-cells.html), [Code Cells](https://nbsphinx.readthedocs.io/en/0.8.7/code-cells.html)
+マークダウンセルとコードセルに関する詳しいドキュメント: [An example Jupyter Notebook](https://myst-nb.readthedocs.io/en/latest/examples/basic.html)
 
 ### API Documentation
 ドキュメントコメント(docstring)は関数やクラスの定義の直後に書くと API ドキュメントが自動生成されます．以下に例を示します:
