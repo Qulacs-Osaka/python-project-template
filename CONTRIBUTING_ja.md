@@ -3,13 +3,13 @@
 poetry をインストールしてください．
 poetry は依存解決，パッケージのビルドと公開のためのツールです．
 
-Linux と macOS におけるインストール方法は
+Linux と macOS では以下のコマンドでインストールしてください．
 ```bash
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
 ```
 
-Windows では
-```bash
+Windows では PowerShell を使ってください．
+```powershell
 (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
 ```
 
@@ -26,7 +26,6 @@ VSCode を使う場合はプロジェクトのルートに作成すると便利�
 ```bash
 poetry config virtualenvs.in-project true
 ```
-そして VSCode の設定で `./.venv/bin/python`(Windows では `./.venv/Scripts/python.exe`) をプロジェクトの Python インタプリタとして指定します．
 
 ### Dependency management
 poetry は依存パッケージのリストを `pyproject.toml` で管理します．
@@ -60,6 +59,10 @@ poetry run python
 ```
 
 言い換えると，`python main.py` と実行しただけでは仮想環境にインストールしたパッケージを利用することはできません．
+
+VSCode上で実行する場合は`./.venv/bin/python`(Windows では `./.venv/Scripts/python.exe`) をプロジェクトの Python インタプリタとして指定します．
+指定方法については[Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment)を参照してください．
+
 
 ### Build and publish
 wheel アーカイブをビルドするには以下を実行します．
@@ -218,7 +221,7 @@ def wonderful_func(x: Int, y: str) -> str:
     return x + y
 ```
 
-詳しくは https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html を参照してください．
+詳しくは [sphinx document](https://www.sphinx-doc.org/ja/master/usage/extensions/napoleon.html) を参照してください．
 
 ### Build
 ドキュメントを HTML ファイルとしてビルドするには以下を実行します．
