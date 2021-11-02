@@ -33,7 +33,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
-    "nbsphinx",
+    "myst_nb"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -57,9 +57,7 @@ html_theme_options = {
     "repository_branch": "main",
     "use_repository_button": True,
     "path_to_docs": "doc/source",
-    "launch_buttons": {
-        "colab_url": "https://colab.research.google.com"
-    },
+    "launch_buttons": {"colab_url": "https://colab.research.google.com"},
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
