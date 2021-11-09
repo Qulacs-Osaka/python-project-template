@@ -185,19 +185,16 @@ You can create tutorial pages from Jupyter Notebook.
 1. Create file like `1.1_wonderful_tutorial.ipynb` in `doc/source/notebooks`. 1 file corresponds to 1 page in the Web site.
 2. Add title like `# Wonderful Tutorial` in the first Markdown cell. This is displayed at index page of the document as a title.
 3. Add contents.
-4. Add a line `notebooks/1.1_wonderful_tutorial`(file name without its extension) to `doc/source/index.rst` like this:
+4. Add a line `1.1_wonderful_tutorial`(file name without its extension) to `doc/source/notebooks/index.rst` like this:
 ```
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-   modules
-   notebooks/1.1_wonderful_tutorial
+   1.1_wonderful_tutorial
 ```
 
 Images used in notebooks should be stored at `doc/source/notebooks/figs`. It is recommended to name the images with the section number: e.g. `1.1_wonderful_graph.png`.
 
-Detailed instructions of Markdown and code cells are available: [Markdown Cells](https://nbsphinx.readthedocs.io/en/0.8.7/markdown-cells.html), [Code Cells](https://nbsphinx.readthedocs.io/en/0.8.7/code-cells.html)
+Detailed instructions of Markdown and code cells are available: [An example Jupyter Notebook](https://myst-nb.readthedocs.io/en/latest/examples/basic.html)
 
 ### API Documentation
 API documentation is generated from documentation comments(docstring) which are put just after a definition of function or class. This is an example:

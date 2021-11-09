@@ -14,7 +14,8 @@ pytest = "^6.2.5"
 Sphinx = "^4.2.0"
 sphinx-book-theme = "^0.1.6"
 ipykernel = "^6.4.2"
-nbsphinx = "^0.8.7"
+myst-nb = "^0.13.1"
+
 
 [tool.pysen]
 version = "0.9"
