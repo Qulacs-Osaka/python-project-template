@@ -185,7 +185,7 @@ You can create tutorial pages from Jupyter Notebook.
 1. Create file like `1.1_wonderful_tutorial.ipynb` in `doc/source/notebooks`. 1 file corresponds to 1 page in the Web site.
 2. Add title like `# Wonderful Tutorial` in the first Markdown cell. This is displayed at index page of the document as a title.
 3. Add contents.
-4. Add a line `1.1_wonderful_tutorial`(file name without its extension) to `doc/source/notebooksindex.rst` like this:
+4. Add a line `1.1_wonderful_tutorial`(file name without its extension) to `doc/source/notebooks/index.rst` like this:
 ```
 .. toctree::
 
