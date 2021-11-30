@@ -19,14 +19,14 @@ test:
 tests/%.py: FORCE
 	$(PYTEST) $@
 
-.PHONY: lint
-lint:
+.PHONY: check
+check:
 	$(FORMATTER) $(CHECK_DIR) --check --diff
 	$(LINTER) $(CHECK_DIR)
 	$(IMPORT_SORTER) $(CHECK_DIR) --check --diff
 
-.PHONY: fix
-fix:
+.PHONY: format
+format:
 	$(FORMATTER) $(CHECK_DIR)
 	$(IMPORT_SORTER) $(CHECK_DIR)
 

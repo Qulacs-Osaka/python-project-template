@@ -38,7 +38,7 @@ jobs:
         run: poetry install --no-interaction
 
       - name: Check format & lint
-        run: make lint
+        run: make check
 
       - name: Check type
         run: make type
