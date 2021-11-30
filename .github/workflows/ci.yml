@@ -40,5 +40,8 @@ jobs:
       - name: Check format & lint
         run: make lint
 
+      - name: Check type
+        run: make type
+
       - name: Run test
         run: make test

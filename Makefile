@@ -1,7 +1,12 @@
-PYSEN := poetry run pysen
 PYTEST := poetry run pytest
+FORMATTER := poetry run black
+LINTER := poetry run flake8
+IMPORT_SORTER := poetry run isort
+TYPE_CHECKER := poetry run mypy
 SPHINX_APIDOC := poetry run sphinx-apidoc
+
 PROJECT_DIR := project_name
+CHECK_DIR := $(PROJECT_DIR) tests
 PORT := 8000
 
 # Idiom found at https://www.gnu.org/software/make/manual/html_node/Force-Targets.html
@@ -16,14 +21,19 @@ tests/%.py: FORCE
 
 .PHONY: lint
 lint:
-	$(PYSEN) run lint
+	$(FORMATTER) $(CHECK_DIR) --check --diff
+	$(LINTER) $(CHECK_DIR)
+	$(IMPORT_SORTER) $(CHECK_DIR) --check --diff
 
-.PHONY: format
-format:
-	$(PYSEN) run format
+.PHONY: fix
+fix:
+	$(FORMATTER) $(CHECK_DIR)
+	$(IMPORT_SORTER) $(CHECK_DIR)
 
-.PHONY: check
-check: format lint
+# Splitted from `check` because not all projects are ready to pass mypy.
+.PHONY: type
+type:
+	$(TYPE_CHECKER) $(PROJECT_DIR)
 
 .PHONY: api
 api:
