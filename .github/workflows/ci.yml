@@ -37,11 +37,8 @@ jobs:
       - name: Install library
         run: poetry install --no-interaction
 
-      - name: Check format & lint
-        run: make check
-
-      - name: Check type
-        run: make type
+      - name: Check format, lint and type
+        run: make ci
 
       - name: Run test
         run: make test

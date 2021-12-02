@@ -98,11 +98,6 @@ make check
 make test
 ```
 
-If you have format or lint error, you can use this command to try fixing it automatically.
-```bash
-make format
-```
-
 There might remain some errors. They cannot be fixed automatically, so fix them manually.
 
 7. After coding, commit and push changes.
