@@ -32,6 +32,7 @@ format:
 	$(IMPORT_SORTER) $(CHECK_DIR)
 
 .PHONY: format_check
+format_check:
 	$(FORMATTER) $(CHECK_DIR) --check --diff
 	$(IMPORT_SORTER) $(CHECK_DIR) --check --diff
 
