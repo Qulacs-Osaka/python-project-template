@@ -48,6 +48,8 @@
 	// ["echo", "hello"]
 	"postStartCommand": "/usr/bin/git config --global gpg.program /usr/bin/gpg && sudo chown vscode .venv",
 
+	"forwardPorts": [8000],
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
