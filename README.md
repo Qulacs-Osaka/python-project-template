@@ -12,7 +12,4 @@ Then rename following stuffs:
 * `project_name` directory -> Your new project name
 * `python-project-template` -> Your new GitHub repository name
 
-In this repository, `Python 3.9` is specified as the default Python version to use.
-If you encounter errors related to this, please install `Python 3.9`.
-
 It is recommended to use editor's replacement function. In VS Code, refer to [This document](https://code.visualstudio.com/Docs/editor/codebasics#_search-and-replace).
