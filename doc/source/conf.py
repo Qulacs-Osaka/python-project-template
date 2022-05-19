@@ -64,3 +64,12 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+
+# Some notebooks take too long time to wait for finishing in documentation build.
+# For these cases, notebooks execution can be turned off.
+# c.f. https://myst-nb.readthedocs.io/en/latest/computation/execute.html#notebook-execution-modes
+# nb_execution_mode = "off"
+
+# Since myst_nb==0.14.0, the dollarmath syntax extension is no longer included by default.
+# So enable here explicitly.
+myst_enable_extensions = ["dollarmath"]
