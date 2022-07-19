@@ -39,11 +39,11 @@ format_check:
 
 .PHONY: cov
 cov:
-	$(PYTEST) $(COVERAGE_OPT) --cov-report html $(TEST_DIR)
+	$(PYTEST) $(COVERAGE_OPT) --cov-report html
 
 .PHONY: cov_ci
 cov_ci:
-	$(PYTEST) $(COVERAGE_OPT) --cov-report xml $(TEST_DIR)
+	$(PYTEST) $(COVERAGE_OPT) --cov-report xml
 
 .PHONY: serve_cov
 serve_cov: cov
