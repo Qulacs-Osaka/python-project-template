@@ -7,6 +7,7 @@ SPHINX_APIDOC := poetry run sphinx-apidoc
 
 PROJECT_DIR := project_name
 CHECK_DIR := $(PROJECT_DIR) tests
+COVERAGE_OPT := --cov $(PROJECT_DIR) --cov-branch
 PORT := 8000
 
 # If this project is not ready to pass mypy, remove `type` below.
@@ -35,6 +36,18 @@ format:
 format_check:
 	$(FORMATTER) $(CHECK_DIR) --check --diff
 	$(IMPORT_SORTER) $(CHECK_DIR) --check --diff
+
+.PHONY: cov
+cov:
+	$(PYTEST) $(COVERAGE_OPT) --cov-report html
+
+.PHONY: cov_ci
+cov_ci:
+	$(PYTEST) $(COVERAGE_OPT) --cov-report xml
+
+.PHONY: serve_cov
+serve_cov: cov
+	poetry run python -m http.server --directory htmlcov $(PORT)
 
 .PHONY: lint
 lint:
