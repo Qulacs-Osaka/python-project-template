@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Python 3.9
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9
 
@@ -30,7 +30,7 @@ jobs:
       # https://docs.github.com/en/actions/advanced-guides/caching-dependencies-to-speed-up-workflows#restrictions-for-accessing-a-cache
       - name: Load cached venv
         id: cached-poetry-deps
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ./.venv
           key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
